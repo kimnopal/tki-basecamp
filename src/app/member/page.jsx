@@ -2,6 +2,7 @@
 
 import Card from "../components/Card";
 import { motion } from "framer-motion"
+import members from "@/app/data/member.json"
 
 const Member = () => {
     return (
@@ -15,10 +16,7 @@ const Member = () => {
             <motion.div
                 className="grid grid-cols-[repeat(auto-fit,minmax(200px,_1fr))] gap-4 md:grid-cols-4"
             >
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {members.map((member, index) => (<Card key={index} member={member} />))}
             </motion.div>
         </section>
     );
